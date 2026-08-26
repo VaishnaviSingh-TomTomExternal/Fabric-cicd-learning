@@ -1,0 +1,28 @@
+name: Fabric CI
+
+on: 
+  pull_request:
+   branches:
+     - main
+  push :
+   branches:
+     - fabric-feature
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Show Repository 
+        run: |
+           echo "Repository:"
+           pwd
+           ls -la
+
+      - name: Validate
+        run: |
+          echo "starting fabric ci validation"
+          exit 1
